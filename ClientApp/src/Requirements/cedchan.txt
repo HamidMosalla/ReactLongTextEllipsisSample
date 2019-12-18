@@ -1,0 +1,16 @@
+/**
+* User Story: Being able to preserve page formatting when text is too large
+* 
+ * Description: 
+ * As a developer, I need an Ellipsis react component that will encapsulate text 
+ * data with a fixed max character length so that a text does not occupy  
+ * more space than dedicated by default in a UI. 
+ * 
+ * Acceptance criteria:
+ * - Ellipsis is a react component that can be reused
+ * - Ellipsis consumes a string **text** value as a property
+ * - Elipsis component provides a **length** property that defines the maximum number of characters in the text rendered
+ * - Default length value is 20
+ * - When text length is > max length, text is cut and an ellipsis (...) is added
+* - On user click on text elipsed, the full text is rendered, another mouse click will restore ellipsis
+ */
