@@ -12,7 +12,8 @@ class EllipsisComponent extends React.Component {
 
     render() {
 
-        let maxLength = this.props.maxLength;
+        const defaultMaxLength = 20;
+        let maxLength = this.props.maxLength || defaultMaxLength;
         let ellipsisText = this.props.showFullText ? 'show less' : '... show more';
 
         return (
