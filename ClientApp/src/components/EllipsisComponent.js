@@ -21,7 +21,7 @@ class EllipsisComponent extends React.Component {
                     this.props.showFullText ? this.props.text : `${this.props.text.substr(0, maxLength)}`
                 }
 
-                <a href="#" onClick={this.props.toggleTextEllipsis}>{ellipsisText}</a>
+                <a role="button" onClick={this.props.toggleTextEllipsis}>{ellipsisText}</a>
             </div>
         );
     }
