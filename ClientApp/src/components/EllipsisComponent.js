@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../store/Ellipsis';
 
 class EllipsisComponent extends React.Component {
 
@@ -10,22 +12,22 @@ class EllipsisComponent extends React.Component {
 
     render() {
 
-        // let textLength = this.props.text.length;
         let maxLength = this.props.maxLength;
-        let ellipsisText = this.state.showFullText ? 'show less' : '... show more';
-
-        this.showFullTextHandler = () => this.setState({ showFullText: !this.state.showFullText });
+        let ellipsisText = this.props.showFullText ? 'show less' : '... show more';
 
         return (
             <div>
                 {
-                    this.state.showFullText ? this.props.text : `${this.props.text.substr(0, maxLength)}`
+                    this.props.showFullText ? this.props.text : `${this.props.text.substr(0, maxLength)}`
                 }
 
-                <a href="#" onClick={this.showFullTextHandler}>{ellipsisText}</a>
+                <a href="#" onClick={this.props.toggleTextEllipsis}>{ellipsisText}</a>
             </div>
         );
     }
 }
 
-export default connect()(EllipsisComponent);
+export default connect(
+    state => state.ellipsis,
+    dispatch => bindActionCreators(actionCreators, dispatch)
+)(EllipsisComponent);

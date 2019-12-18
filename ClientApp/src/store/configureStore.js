@@ -9,7 +9,7 @@ export default function configureStore(history, initialState) {
   const reducers = {
     counter: Counter.reducer,
     weatherForecasts: WeatherForecasts.reducer,
-    Ellipsis: Ellipsis.reducer
+    ellipsis: Ellipsis.reducer
   };
 
   const middleware = [
